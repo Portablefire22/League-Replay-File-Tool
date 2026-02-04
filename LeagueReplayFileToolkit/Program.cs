@@ -8,8 +8,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Replays Directory: ");
-        var path = Console.ReadLine();
+        string path;
+        if (args.Length > 0)
+        {
+            path = args[0];
+        }
+        else
+        {
+            Console.Write("Replays Directory: ");
+            path = Console.ReadLine()!;
+        }
 
         var files = Directory.GetFiles(path, "*.lrf");
 
